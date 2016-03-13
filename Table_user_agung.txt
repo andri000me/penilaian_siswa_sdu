@@ -1,0 +1,13 @@
+CREATE table tab_user (
+id int (10) NOT NULL AUTO_INCREMENT,
+username VARCHAR(100),
+password VARCHAR(100),
+level int (10),
+user_insert VARCHAR(100),
+date_insert VARCHAR(100),
+user_update VARCHAR(100),
+date_update VARCHAR(100),
+user_delete VARCHAR(100),
+date_delete VARCHAR(100),
+PRIMARY KEY(ID)
+);

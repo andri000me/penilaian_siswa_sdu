@@ -1,0 +1,16 @@
+CREATE table tab_guru(
+id int(10) NOT NULL AUTO_INCREMENT,
+nama_guru varchar(50),
+tempat_lahir varchar(50),
+tgl_lahir varchar(50),
+alamat varchar(50),
+telp varchar(50),
+foto varchar(50),
+user_insert varchar(100),
+date_insert varchar(100),
+user_update varchar(100),
+date_update varchar(100),
+user_delete varchar(100),
+date_delete varchar(100),
+PRIMARY KEY(id)
+);

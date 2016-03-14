@@ -1,0 +1,11 @@
+CREATE table tab_kelas(
+id int(10) NOT NULL AUTO_INCREMENT,
+nama_kelas varchar(50),
+user_insert varchar(100),
+date_insert varchar(100),
+user_update varchar(100),
+date_update varchar(100),
+user_delete varchar(100),
+date_delete varchar(100),
+PRIMARY KEY(id)
+);

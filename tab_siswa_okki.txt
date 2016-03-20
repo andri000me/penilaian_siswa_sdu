@@ -1,0 +1,18 @@
+create table tab_siswa(
+id int(25) NOT NULL AUTO_INCREMENT,
+nis varchar(100),
+nama_siswa varchar(200),
+tempat_lahir varchar(50),
+tgl_lahir date,
+alamat text,
+id_kelas int(25),
+telp text, 
+foto varchar(250),
+user_insert varchar(50),
+date_insert varchar(50),
+user_update varchar(50),
+date_update varchar(50),
+user_delete varchar(50),
+date_delete varchar(50),
+PRIMARY KEY(id)
+);

@@ -1,0 +1,327 @@
+<?php
+require "user_cek_auth.php";
+?>
+<!DOCTYPE html>
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+
+        <title>Master Siswa</title>
+
+      
+        <link rel="shortcut icon" href="asset/img/favicon.ico">
+     
+        
+        <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+
+     
+        <link rel="stylesheet" href="asset/css/plugins.css">
+
+        
+        <link rel="stylesheet" href="asset/css/main.css">
+
+        
+        <link rel="stylesheet" href="asset/css/themes.css">
+        
+        <script src="asset/js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    </head>
+    
+    <body>
+       
+        <div class="preloader themed-background">
+            <h1 class="push-top-bottom text-light text-center"><strong>Pro</strong>UI</h1>
+            <div class="inner">
+                <h3 class="text-light visible-lt-ie9 visible-lt-ie10"><strong>Loading..</strong></h3>
+                <div class="preloader-spinner hidden-lt-ie9 hidden-lt-ie10"></div>
+            </div>
+        </div>
+        
+        <div id="page-container" class="sidebar-partial sidebar-visible-lg sidebar-no-animations">
+            <!-- Alternative Sidebar -->
+            <div id="sidebar-alt">
+                <!-- Wrapper for scrolling functionality -->
+              
+                <!-- END Wrapper for scrolling functionality -->
+            </div>
+            <!-- END Alternative Sidebar -->
+
+            <!-- Main Sidebar -->
+            <div id="sidebar">
+                <!-- Wrapper for scrolling functionality -->
+                <div class="sidebar-scroll">
+                    <!-- Sidebar Content -->
+                    <div class="sidebar-content">
+                        <!-- Brand -->
+                        <a href="index.html" class="sidebar-brand">
+                        <strong>Penilaian Siswa</strong> 
+                        </a>
+                        <!-- END Brand -->
+
+                        
+
+                       
+
+                        <!-- Sidebar Navigation -->
+                        <ul class="sidebar-nav">
+                            
+                            <li>
+                                <a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Menu Master</a>
+                                <ul>
+                                    <li>
+                                        <a href="page_ui_grid_blocks.html">Grid &amp; Blocks</a>
+                                    </li>
+                                    <li>
+                                        <a href="page_ui_draggable_blocks.html">Draggable Blocks</a>
+                                    </li>
+                                    <li>
+                                        <a href="page_ui_typography.html">Typography</a>
+                                    </li>
+                                    <li>
+                                        <a href="page_ui_buttons_dropdowns.html">Buttons &amp; Dropdowns</a>
+                                    </li>
+                                    <li>
+                                        <a href="page_ui_navigation_more.html">Navigation &amp; More</a>
+                                    </li>
+                                    <li>
+                                        <a href="page_ui_horizontal_menu.html">Horizontal Menu</a>
+                                    </li>
+                                    <li>
+                                        <a href="page_ui_progress_loading.html">Progress &amp; Loading</a>
+                                    </li>
+                                    <li>
+                                        <a href="page_ui_preloader.html">Page Preloader</a>
+                                    </li>
+                                    <li>
+                                        <a href="page_ui_color_themes.html">Color Themes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                          
+                           
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- END Sidebar Navigation -->
+
+                       
+                    </div>
+                    <!-- END Sidebar Content -->
+                </div>
+                <!-- END Wrapper for scrolling functionality -->
+            </div>
+            <!-- END Main Sidebar -->
+
+            <!-- Main Container -->
+            <div id="main-container">
+              
+                <header class="navbar navbar-default">
+                    <!-- Left Header Navigation -->
+                    <ul class="nav navbar-nav-custom">
+                        <!-- Main Sidebar Toggle Button -->
+                        <li>
+                            <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');">
+                                <i class="fa fa-bars fa-fw"></i>
+                            </a>
+                        </li>
+                        <!-- END Main Sidebar Toggle Button -->
+
+                        <!-- Template Options -->
+                        <!-- Change Options functionality can be found in js/app.js - templateOptions() -->
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="gi gi-settings"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-custom dropdown-options">
+                                <li class="dropdown-header text-center">Header Style</li>
+                                <li>
+                                    <div class="btn-group btn-group-justified btn-group-sm">
+                                        <a href="javascript:void(0)" class="btn btn-primary" id="options-header-default">Light</a>
+                                        <a href="javascript:void(0)" class="btn btn-primary" id="options-header-inverse">Dark</a>
+                                    </div>
+                                </li>
+                                <li class="dropdown-header text-center">Page Style</li>
+                                <li>
+                                    <div class="btn-group btn-group-justified btn-group-sm">
+                                        <a href="javascript:void(0)" class="btn btn-primary" id="options-main-style">Default</a>
+                                        <a href="javascript:void(0)" class="btn btn-primary" id="options-main-style-alt">Alternative</a>
+                                    </div>
+                                </li>
+                                <li class="dropdown-header text-center">Main Layout</li>
+                                <li>
+                                    <button class="btn btn-sm btn-block btn-primary" id="options-header-top">Fixed Side/Header (Top)</button>
+                                    <button class="btn btn-sm btn-block btn-primary" id="options-header-bottom">Fixed Side/Header (Bottom)</button>
+                                </li>
+                                <li class="dropdown-header text-center">Footer</li>
+                                <li>
+                                    <div class="btn-group btn-group-justified btn-group-sm">
+                                        <a href="javascript:void(0)" class="btn btn-primary" id="options-footer-static">Default</a>
+                                        <a href="javascript:void(0)" class="btn btn-primary" id="options-footer-fixed">Fixed</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END Template Options -->
+                    </ul>
+                    <!-- END Left Header Navigation -->
+
+                   
+                    <!-- Right Header Navigation -->
+                    <ul class="nav navbar-nav-custom pull-right">
+                        <!-- Alternative Sidebar Toggle Button -->
+                        
+                        <!-- END Alternative Sidebar Toggle Button -->
+
+                        <!-- User Dropdown -->
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="asset/img/placeholders/avatars/avatar2.jpg"> <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+                                 
+                                <li>
+                                    
+                                    <a href="logout.php"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <!-- END User Dropdown -->
+                    </ul>
+                    <!-- END Right Header Navigation -->
+                </header>
+                <!-- END Header -->
+
+                <!-- Page content -->
+                <div id="page-content">
+                    <!-- Datatables Header -->
+                    <div class="content-header">
+                        <div class="header-section">
+                            <h1>
+                                <i class="fa fa-table"></i>Add Master Siswa<br> 
+                            </h1>
+                        </div>
+                    </div>
+                    <ul class="breadcrumb breadcrumb-top">
+                        <li>Tables</li>
+                        <li><a href="master_siswa.php">Master Siswa</a></li>
+                        <li class="active">Add Master Siswa</li>
+                    </ul>
+                    <!-- END Datatables Header -->
+
+                    <!-- Datatables Content -->
+                    <div class="block full">
+                        <div class="block-title">
+                            <h2><strong>Add Data Master Siswa</strong>  </h2>
+                        </div>
+                      
+                         <form action="pro_add_master_siswa.php" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-text-input">NIS </label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="nis" class="form-control" placeholder="NIS">
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-text-input">Nama </label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="nama" class="form-control" placeholder="Nama">
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-text-input">Tempat Lahir </label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-datepicker">Tanggal Lahir</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-datepicker" name="tanggal_lahir" class="form-control input-datepicker" data-date-format="yyyy/mm/dd" placeholder="yyyy/mm/dd">
+                                            </div>
+                                        </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-textarea-input">Alamat</label>
+                                        <div class="col-md-9">
+                                            <textarea  name="alamat" rows="9" class="form-control" placeholder="Alamat"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-select">Kelas</label>
+                                        <div class="col-md-9">
+                                            <select id="example-select" name="kelas" class="form-control" size="1">
+                                                <option value="" selected="selected">--Pilih--</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                      <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-text-input">Telepon </label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="no_telp" class="form-control" placeholder="No Telepon">
+                                             
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-file-input">Foto</label>
+                                        <div class="col-md-9">
+                                            <input type="file" name="foto">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group form-actions">
+                                        <div class="col-md-9 col-md-offset-3">
+                                            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Simpan</button>
+                                            <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                      
+                        </div>
+                    </div>
+                    <!-- END Datatables Content -->
+                </div>
+                <!-- END Page Content -->
+
+                <!-- Footer -->
+                <footer class="clearfix">
+                     
+                    <div class="pull-left">
+                        <span id="year-copy"></span> &copy; <a href="" target="_blank">STIKOM & UHAMKA</a>
+                    </div>
+                </footer>
+                <!-- END Footer -->
+            </div>
+            <!-- END Main Container -->
+        </div>
+        <!-- END Page Container -->
+
+        <!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+        <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
+        
+
+        <!-- Include Jquery library from Google's CDN but if something goes wrong get Jquery from local file (Remove 'http:' if you have SSL) -->
+        <script src="asset/jquery.min.js"></script>
+            <!-- Bootstrap.js, Jquery plugins and Custom JS code -->
+        <script src="asset/js/vendor/bootstrap.min.js"></script>
+        <script src="asset/js/plugins.js"></script>
+        <script src="asset/js/app.js"></script>
+
+        <!-- Load and execute javascript code used only in this page -->
+        <script src="asset/js/pages/tablesDatatables.js"></script>
+        <script>$(function(){ TablesDatatables.init(); });</script>
+    </body>
+</html>

@@ -21,6 +21,9 @@ $availsql = mysql_num_rows($executesql);
 if($availsql > 0){
 	//jika login berhasil maka akan dialihkan ke halaman dashboard
 	header('location:dashboard.php');
+	session_start();
+	$_SESSION['username'] = $datasql['username'];
+	
 }else{
 	//jika gagal balik lagi ke halaman login
 	header('location:index.php');

@@ -1,3 +1,6 @@
+<?php
+require "user_cek_auth.php";
+?>
 <!DOCTYPE html>
 <html class="no-js"> 
     <head>
@@ -50,44 +53,13 @@
                     <div class="sidebar-content">
                         <!-- Brand -->
                         <a href="index.html" class="sidebar-brand">
-                            <i class="gi gi-flash"></i><strong>Pro</strong>UI
+                        <strong>Penilaian Siswa</strong> 
                         </a>
                         <!-- END Brand -->
 
                         
 
-                        <!-- Theme Colors -->
-                        <!-- Change Color Theme functionality can be found in js/app.js - templateOptions() -->
-                        <ul class="sidebar-section sidebar-themes clearfix">
-                            <li class="active">
-                                <a href="javascript:void(0)" class="themed-background-dark-default themed-border-default" data-theme="default" data-toggle="tooltip" title="Default Blue"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-dark-night themed-border-night" data-theme="css/themes/night.css" data-toggle="tooltip" title="Night"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-dark-amethyst themed-border-amethyst" data-theme="css/themes/amethyst.css" data-toggle="tooltip" title="Amethyst"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-dark-modern themed-border-modern" data-theme="css/themes/modern.css" data-toggle="tooltip" title="Modern"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-dark-autumn themed-border-autumn" data-theme="css/themes/autumn.css" data-toggle="tooltip" title="Autumn"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-dark-flatie themed-border-flatie" data-theme="css/themes/flatie.css" data-toggle="tooltip" title="Flatie"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-dark-spring themed-border-spring" data-theme="css/themes/spring.css" data-toggle="tooltip" title="Spring"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-dark-fancy themed-border-fancy" data-theme="css/themes/fancy.css" data-toggle="tooltip" title="Fancy"></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)" class="themed-background-dark-fire themed-border-fire" data-theme="css/themes/fire.css" data-toggle="tooltip" title="Fire"></a>
-                            </li>
-                        </ul>
-                        <!-- END Theme Colors -->
+                       
 
                         <!-- Sidebar Navigation -->
                         <ul class="sidebar-nav">
@@ -197,25 +169,19 @@
                     <!-- Right Header Navigation -->
                     <ul class="nav navbar-nav-custom pull-right">
                         <!-- Alternative Sidebar Toggle Button -->
-                        <li>
-                            <!-- If you do not want the main sidebar to open when the alternative sidebar is closed, just remove the second parameter: App.sidebar('toggle-sidebar-alt'); -->
-                            <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt', 'toggle-other');">
-                                <i class="gi gi-share_alt"></i>
-                                <span class="label label-primary label-indicator animation-floating">4</span>
-                            </a>
-                        </li>
+                        
                         <!-- END Alternative Sidebar Toggle Button -->
 
                         <!-- User Dropdown -->
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="img/placeholders/avatars/avatar2.jpg" alt="avatar"> <i class="fa fa-angle-down"></i>
+                                <img src="asset/img/placeholders/avatars/avatar2.jpg"> <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                  
                                 <li>
                                     
-                                    <a href="login.html"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+                                    <a href="logout.php"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
                                 </li>
                                 
                             </ul>
@@ -232,7 +198,7 @@
                     <div class="content-header">
                         <div class="header-section">
                             <h1>
-                                <i class="fa fa-table"></i>Master Siswa<br><small>Tabel Master Data Siswa</small>
+                                <i class="fa fa-table"></i>Master Siswa<br> 
                             </h1>
                         </div>
                     </div>
@@ -248,59 +214,48 @@
                             <h2><strong>Data Master</strong>  </h2>
                         </div>
                          
-                        <div class="table-responsive">
+                        <a href="add_master_siswa.php" class="btn btn-primary"> Tambah Data </a>
+                        <br>
+                           <div class="table-responsive">
+
+                           <?php
+                           include "koneksi.php";
+
+                           $sql = "select *,date_format(tgl_lahir,'%d %M %Y') as ttl from tab_siswa";
+                           
+                           $exsql = mysql_query($sql);
+
+                           ?>
                             <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">ID</th>
-                                        <th class="text-center"><i class="gi gi-user"></i></th>
-                                        <th>Client</th>
-                                        <th>Email</th>
-                                        <th>Subscription</th>
-                                        <th class="text-center">Actions</th>
+                                        <th class="text-center">NIS</th>
+                                        <th class="text-center">Nama</th>
+                                        <th class="text-center">TTL</th>
+                                        <th class="text-center">Alamat</th>
+                                        <th class="text-center">Telp</th>
+                                        <th class="text-center">Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                while($row = mysql_fetch_array($exsql)){
+                                ?>
                                     <tr>
-                                        <td class="text-center">1</td>
-                                        <td class="text-center"><img src="img/placeholders/avatars/avatar5.jpg" alt="avatar" class="img-circle"></td>
-                                        <td><a href="javascript:void(0)">client1</a></td>
-                                        <td>client1@company.com</td>
-                                        <td><span class="label label-primary">Personal</span></td>
-                                        <td class="text-center">
-                                            <div class="btn-group">
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </td>
+                                        <td class="text-center"><?php echo $row['nis']; ?></td>
+                                        <td class="text-center"><?php echo $row['nama_siswa']; ?></td>
+                                        <td class="text-center"><?php echo $row['tempat_lahir'] .','. $row['ttl']; ?></td>
+                                        <td class="text-center"><?php echo $row['alamat']; ?></td>
+                                        <td class="text-center"><?php echo $row['telp']; ?></td>
+                                        <td> <a href="edit_master_siswa.php?id=<?php echo $row['id']; ?>"> <span class="label label-primary">Edit </span>  </a> &nbsp; 
+                                             <a href="pro_del_master_siswa.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"> <span class="label label-primary">Delete </span>  </a> &nbsp;
+                                             <a href="foto_siswa.php?id=<?php echo $row['id']; ?>"> <span class="label label-primary">Foto </span>  </a>
+                                             </td>
+                                       
                                     </tr>
-                                    <tr>
-                                        <td class="text-center">2</td>
-                                        <td class="text-center"><img src="img/placeholders/avatars/avatar3.jpg" alt="avatar" class="img-circle"></td>
-                                        <td><a href="javascript:void(0)">client2</a></td>
-                                        <td>client2@company.com</td>
-                                        <td><span class="label label-warning">Trial</span></td>
-                                        <td class="text-center">
-                                            <div class="btn-group">
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">3</td>
-                                        <td class="text-center"><img src="img/placeholders/avatars/avatar9.jpg" alt="avatar" class="img-circle"></td>
-                                        <td><a href="javascript:void(0)">client3</a></td>
-                                        <td>client3@company.com</td>
-                                        <td><span class="label label-success">VIP</span></td>
-                                        <td class="text-center">
-                                            <div class="btn-group">
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                   
+                                <?php
+                                }
+                                ?>
                                 </tbody>
                             </table>
                         </div>

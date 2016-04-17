@@ -1,7 +1,8 @@
 <?php
+require "user_cek_auth.php";
 echo "anda berhasil login";
-echo "<br>";
- 
+
 ?>
+
 <a href="master_siswa.php"> Master Siswa</a>
-<a href="index.php"> Logout </a>
+<a href="logout.php"> Logout </a>

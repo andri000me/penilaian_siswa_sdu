@@ -23,6 +23,10 @@ if($availsql > 0){
 	header('location:dashboard.php');
 	session_start();
 	$_SESSION['username'] = $datasql['username'];
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
 }else{
 	//jika gagal balik lagi ke halaman login
 	header('location:index.php');

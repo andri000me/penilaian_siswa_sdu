@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-mantapp
-=======
-i love nova
->>>>>>> 94a2aa5304dd26d6682b5cdf6529700171994a5e

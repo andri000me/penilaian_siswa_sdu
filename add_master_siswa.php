@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<?php
+require "user_cek_auth.php";
+?>
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
 <!DOCTYPE html>
 <html class="no-js"> 
     <head>
@@ -50,12 +56,17 @@
                     <div class="sidebar-content">
                         <!-- Brand -->
                         <a href="index.html" class="sidebar-brand">
+<<<<<<< HEAD
                             <i class="gi gi-flash"></i><strong>Pro</strong>UI
+=======
+                        <strong>Penilaian Siswa</strong> 
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                         </a>
                         <!-- END Brand -->
 
                         
 
+<<<<<<< HEAD
                         <!-- Theme Colors -->
                         <!-- Change Color Theme functionality can be found in js/app.js - templateOptions() -->
                         <ul class="sidebar-section sidebar-themes clearfix">
@@ -88,6 +99,9 @@
                             </li>
                         </ul>
                         <!-- END Theme Colors -->
+=======
+                       
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
 
                         <!-- Sidebar Navigation -->
                         <ul class="sidebar-nav">
@@ -193,6 +207,7 @@
                     </ul>
                     <!-- END Left Header Navigation -->
 
+<<<<<<< HEAD
                     <!-- Right Header Navigation -->
                     <ul class="nav navbar-nav-custom pull-right">
                         <!-- Alternative Sidebar Toggle Button -->
@@ -203,18 +218,33 @@
                                 <span class="label label-primary label-indicator animation-floating">4</span>
                             </a>
                         </li>
+=======
+                   
+                    <!-- Right Header Navigation -->
+                    <ul class="nav navbar-nav-custom pull-right">
+                        <!-- Alternative Sidebar Toggle Button -->
+                        
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                         <!-- END Alternative Sidebar Toggle Button -->
 
                         <!-- User Dropdown -->
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+<<<<<<< HEAD
                                 <img src="img/placeholders/avatars/avatar2.jpg" alt="avatar"> <i class="fa fa-angle-down"></i>
+=======
+                                <img src="asset/img/placeholders/avatars/avatar2.jpg"> <i class="fa fa-angle-down"></i>
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                  
                                 <li>
                                     
+<<<<<<< HEAD
                                     <a href="login.html"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+=======
+                                    <a href="logout.php"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                                 </li>
                                 
                             </ul>
@@ -231,16 +261,28 @@
                     <div class="content-header">
                         <div class="header-section">
                             <h1>
+<<<<<<< HEAD
                                 <i class="fa fa-table"></i>Master Siswa<br><small>Tabel Master Data Siswa</small>
+=======
+                                <i class="fa fa-table"></i>Add Master Siswa<br> 
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                             </h1>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
                         <li>Tables</li>
+<<<<<<< HEAD
                         <li><a href="">Datatables</a></li>
                     </ul>
                     <!-- END Datatables Header -->
                     
+=======
+                        <li><a href="master_siswa.php">Master Siswa</a></li>
+                        <li class="active">Add Master Siswa</li>
+                    </ul>
+                    <!-- END Datatables Header -->
+
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                     <!-- Datatables Content -->
                     <div class="block full">
                         <div class="block-title">
@@ -324,7 +366,11 @@
                         </div>
                     </div>
                     <!-- END Datatables Content -->
+<<<<<<< HEAD
 
+=======
+                </div>
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                 <!-- END Page Content -->
 
                 <!-- Footer -->

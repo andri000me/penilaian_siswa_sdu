@@ -1,9 +1,25 @@
-<<<<<<< HEAD
-=======
 <?php
 require "user_cek_auth.php";
+require "koneksi.php";
+$id = $_GET['id'];
+$sql = *select* from tab_siswa where id = '$id'";
+$exsql = mysql_query($sql);
+&data = mysql_fetch_array($exsql);
+
+$id = $data['id']; 
+$nis = $data['nis'];
+$nama = $data['nama_siswa'];
+$tempat_lahir = $data['tempat_lahir'];
+$tgl_lahir = $data['tgl_lahir'];
+$alamat = $data['alamat'];
+$kelas = $data['id_kelas'];
+$telp = $data['telp'];
+$foto = $data['foto'];
+
+
 ?>
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
+
+
 <!DOCTYPE html>
 <html class="no-js"> 
     <head>
@@ -56,17 +72,12 @@ require "user_cek_auth.php";
                     <div class="sidebar-content">
                         <!-- Brand -->
                         <a href="index.html" class="sidebar-brand">
-<<<<<<< HEAD
                             <i class="gi gi-flash"></i><strong>Pro</strong>UI
-=======
-                        <strong>Penilaian Siswa</strong> 
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                         </a>
                         <!-- END Brand -->
 
                         
 
-<<<<<<< HEAD
                         <!-- Theme Colors -->
                         <!-- Change Color Theme functionality can be found in js/app.js - templateOptions() -->
                         <ul class="sidebar-section sidebar-themes clearfix">
@@ -99,9 +110,6 @@ require "user_cek_auth.php";
                             </li>
                         </ul>
                         <!-- END Theme Colors -->
-=======
-                       
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
 
                         <!-- Sidebar Navigation -->
                         <ul class="sidebar-nav">
@@ -207,23 +215,10 @@ require "user_cek_auth.php";
                     </ul>
                     <!-- END Left Header Navigation -->
 
-<<<<<<< HEAD
-                    <!-- Right Header Navigation -->
-                    <ul class="nav navbar-nav-custom pull-right">
-                        <!-- Alternative Sidebar Toggle Button -->
-                        <li>
-                            <!-- If you do not want the main sidebar to open when the alternative sidebar is closed, just remove the second parameter: App.sidebar('toggle-sidebar-alt'); -->
-                            <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt', 'toggle-other');">
-                                <i class="gi gi-share_alt"></i>
-                                <span class="label label-primary label-indicator animation-floating">4</span>
-                            </a>
-                        </li>
-=======
                    
                     <!-- Right Header Navigation -->
                     <ul class="nav navbar-nav-custom pull-right">
                         <!-- Alternative Sidebar Toggle Button -->
-<<<<<<< HEAD
                         <li>
                             <!-- If you do not want the main sidebar to open when the alternative sidebar is closed, just remove the second parameter: App.sidebar('toggle-sidebar-alt'); -->
                             <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt', 'toggle-other');">
@@ -231,29 +226,18 @@ require "user_cek_auth.php";
                                 <span class="label label-primary label-indicator animation-floating">4</span>
                             </a>
                         </li>
-=======
-                        
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                         <!-- END Alternative Sidebar Toggle Button -->
 
                         <!-- User Dropdown -->
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-<<<<<<< HEAD
                                 <img src="img/placeholders/avatars/avatar2.jpg" alt="avatar"> <i class="fa fa-angle-down"></i>
-=======
-                                <img src="asset/img/placeholders/avatars/avatar2.jpg"> <i class="fa fa-angle-down"></i>
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                  
                                 <li>
                                     
-<<<<<<< HEAD
-                                    <a href="login.html"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
-=======
                                     <a href="logout.php"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                                 </li>
                                 
                             </ul>
@@ -270,73 +254,55 @@ require "user_cek_auth.php";
                     <div class="content-header">
                         <div class="header-section">
                             <h1>
-<<<<<<< HEAD
                                 <i class="fa fa-table"></i>Master Siswa<br><small>Tabel Master Data Siswa</small>
-=======
-                                <i class="fa fa-table"></i>Add Master Siswa<br> 
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                             </h1>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
                         <li>Tables</li>
-<<<<<<< HEAD
                         <li><a href="">Datatables</a></li>
                     </ul>
                     <!-- END Datatables Header -->
-<<<<<<< HEAD
-                    
-=======
 
                    <!-- Datatables Content -->
->>>>>>> e09c44311136374f6b565a314557ef4840bd8d9a
-=======
-                        <li><a href="master_siswa.php">Master Siswa</a></li>
-                        <li class="active">Add Master Siswa</li>
-                    </ul>
-                    <!-- END Datatables Header -->
-
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
-                    <!-- Datatables Content -->
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                     <div class="block full">
                         <div class="block-title">
                             <h2><strong>Add Data Master Siswa</strong>  </h2>
                         </div>
                       
-                         <form action="pro_add_master_siswa.php" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                         <form action="pro_edit_master_siswa.php" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
                                     
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="example-text-input">NIS </label>
                                         <div class="col-md-9">
-                                            <input type="text" name="nis" class="form-control" placeholder="NIS">
+                                            <input type="text" name="nis" class="form-control" value="<?php echo $nis;?>" placeholder="NIS">
                                              
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="example-text-input">Nama </label>
                                         <div class="col-md-9">
-                                            <input type="text" name="nama" class="form-control" placeholder="Nama">
+                                            <input type="text" name="nama" class="form-control" value="<?php echo $nama;?> placeholder="Nama">
                                              
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="example-text-input">Tempat Lahir </label>
                                         <div class="col-md-9">
-                                            <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
+                                            <input type="text" name="tempat_lahir" class="form-control" value="<?php echo $Tempat_lahir;?> placeholder="Tempat Lahir">
                                              
                                         </div>
                                     </div>
                                     <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-datepicker">Tanggal Lahir</label>
                                             <div class="col-md-9">
-                                                <input type="text" id="example-datepicker" name="tanggal_lahir" class="form-control input-datepicker" data-date-format="yyyy/mm/dd" placeholder="yyyy/mm/dd">
+                                                <input type="text" id="example-datepicker" name="tanggal_lahir" value="<?php echo $tgl_lahir;?> class="form-control input-datepicker" data-date-format="yyyy/mm/dd" placeholder="yyyy/mm/dd">
                                             </div>
                                         </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="example-textarea-input">Alamat</label>
                                         <div class="col-md-9">
-                                            <textarea  name="alamat" rows="9" class="form-control" placeholder="Alamat"></textarea>
+                                            <textarea  name="alamat" rows="9" class="form-control" placeholder="Alamat"><?php echo $alamat;?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -344,12 +310,31 @@ require "user_cek_auth.php";
                                         <div class="col-md-9">
                                             <select id="example-select" name="kelas" class="form-control" size="1">
                                                 <option value="" selected="selected">--Pilih--</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
+                                                <option value="1" <?php if($kelas ==1){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 1 </option>
+                                                <option value="2" <?php if($kelas ==2){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 2 </option>
+                                                
+                                                <option value="3" <?php if($kelas ==3){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 3 </option>
+                                                <option value="4" <?php if($kelas ==4){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 4 </option>
+                                                <option value="5" <?php if($kelas ==5){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 5 </option>
+											    <option value="6" <?php if($kelas ==6){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 6 </option>
                                             </select>
                                         </div>
                                     </div>
@@ -381,11 +366,7 @@ require "user_cek_auth.php";
                         </div>
                     </div>
                     <!-- END Datatables Content -->
-<<<<<<< HEAD
-
-=======
                 </div>
->>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                 <!-- END Page Content -->
 
                 <!-- Footer -->

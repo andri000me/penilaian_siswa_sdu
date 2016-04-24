@@ -215,6 +215,7 @@ require "user_cek_auth.php";
                         </div>
                          
 <<<<<<< HEAD
+<<<<<<< HEAD
                          <a href="add_master_siswa.php" class="btn btn-primary"> Tambah Data</a>
                          <br>
                             <div class="table-responsive">
@@ -225,6 +226,22 @@ require "user_cek_auth.php";
                             $exsql =mysql_query($sql);
 
                             ?>
+=======
+						 
+				<a href="add_master_siswa.php" class="btn btn-primary"> Tambah Data </a>
+                <br>
+                     <div class="table-responsive">
+
+                 <?php 
+				 include "koneksi.php";
+                 $sql = " select *,date_format(tgl_lahir,'%d %M %Y')	as ttl from tab_siswa";
+                 $exsql = mysql_query($sql);
+                  
+                 ?>				  
+						 
+					
+                           <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+>>>>>>> e09c44311136374f6b565a314557ef4840bd8d9a
 =======
                         <a href="add_master_siswa.php" class="btn btn-primary"> Tambah Data </a>
                         <br>
@@ -240,6 +257,7 @@ require "user_cek_auth.php";
                            ?>
 >>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                             <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
                                 <thead>
                                     <tr>
                                         <th class="text-center">NIS</th>
@@ -273,6 +291,27 @@ require "user_cek_auth.php";
                                     ?>
 =======
                                 <tbody>
+<<<<<<< HEAD
+								
+								<?php
+								while($row = mysql_fetch_array($exsql)){
+								?>	
+								
+                                    <tr>
+                                        <td class="text-center"><?php echo $row['nis']; ?></td>
+                                        <td class="text-center"><?php echo $row['nama_siswa']; ?></td>
+										<td class="text-center"><?php echo $row['tempat_lahir'] .','.$row['ttl']; ?></td>
+										<td class="text-center"><?php echo $row['alamat']; ?></td>
+										<td class="text-center"><?php echo $row['telp']; ?></td>
+                                        <td><a href="edit_master_siswa.php?id=<?php echo $row['id'];?>"><span class="label label-primary">Edit</span> <a/> &nbsp;
+										    <a href="pro_del_master_siswa.php?id=<?php echo $row['id'];?>" onclick="return confirm('Apakah anda yakin menghapus data ini?')"><span class="label label-primary">Delete</span></td>
+										    <a href="foto_siswa.php?id=<?php echo $row['id']; ?>"> <span class="label label-primary">Foto </span> </a>
+										   </td>
+										   </tr>
+										   <?php
+								}
+								?>
+=======
                                 <?php
                                 while($row = mysql_fetch_array($exsql)){
                                 ?>

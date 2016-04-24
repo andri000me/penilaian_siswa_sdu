@@ -1,3 +1,25 @@
+<?php
+require "user_cek_auth.php";
+require "koneksi.php";
+$id = $_GET['id'];
+$sql = *select* from tab_siswa where id = '$id'";
+$exsql = mysql_query($sql);
+&data = mysql_fetch_array($exsql);
+
+$id = $data['id']; 
+$nis = $data['nis'];
+$nama = $data['nama_siswa'];
+$tempat_lahir = $data['tempat_lahir'];
+$tgl_lahir = $data['tgl_lahir'];
+$alamat = $data['alamat'];
+$kelas = $data['id_kelas'];
+$telp = $data['telp'];
+$foto = $data['foto'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html class="no-js"> 
     <head>
@@ -242,58 +264,105 @@
                     </ul>
                     <!-- END Datatables Header -->
 
-                    <!-- Datatables Content -->
+                   <!-- Datatables Content -->
                     <div class="block full">
                         <div class="block-title">
-                            <h2><strong>Data Master</strong>  </h2>
+                            <h2><strong>Add Data Master Siswa</strong>  </h2>
                         </div>
-                         
-						 
-				<a href="add_master_siswa.php" class="btn btn-primary"> Tambah Data </a>
-                <br>
-                     <div class="table-responsive">
+                      
+                         <form action="pro_edit_master_siswa.php" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-text-input">NIS </label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="nis" class="form-control" value="<?php echo $nis;?>" placeholder="NIS">
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-text-input">Nama </label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="nama" class="form-control" value="<?php echo $nama;?> placeholder="Nama">
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-text-input">Tempat Lahir </label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="tempat_lahir" class="form-control" value="<?php echo $Tempat_lahir;?> placeholder="Tempat Lahir">
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-datepicker">Tanggal Lahir</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-datepicker" name="tanggal_lahir" value="<?php echo $tgl_lahir;?> class="form-control input-datepicker" data-date-format="yyyy/mm/dd" placeholder="yyyy/mm/dd">
+                                            </div>
+                                        </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-textarea-input">Alamat</label>
+                                        <div class="col-md-9">
+                                            <textarea  name="alamat" rows="9" class="form-control" placeholder="Alamat"><?php echo $alamat;?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-select">Kelas</label>
+                                        <div class="col-md-9">
+                                            <select id="example-select" name="kelas" class="form-control" size="1">
+                                                <option value="" selected="selected">--Pilih--</option>
+                                                <option value="1" <?php if($kelas ==1){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 1 </option>
+                                                <option value="2" <?php if($kelas ==2){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 2 </option>
+                                                
+                                                <option value="3" <?php if($kelas ==3){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 3 </option>
+                                                <option value="4" <?php if($kelas ==4){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 4 </option>
+                                                <option value="5" <?php if($kelas ==5){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 5 </option>
+											    <option value="6" <?php if($kelas ==6){
+													               echo "selected='selected'";
+												                 }
+												                   ?>> 6 </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                      <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-text-input">Telepon </label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="no_telp" class="form-control" placeholder="No Telepon">
+                                             
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-file-input">Foto</label>
+                                        <div class="col-md-9">
+                                            <input type="file" name="foto">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group form-actions">
+                                        <div class="col-md-9 col-md-offset-3">
+                                            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Simpan</button>
+                                            <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
 
-                 <?php 
-				 include "koneksi.php";
-                 $sql = " select *,date_format(tgl_lahir,'%d %M %Y')	as ttl from tab_siswa";
-                 $exsql = mysql_query($sql);
-                  
-                 ?>				  
-						 
-					
-                           <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">NIS</th>
-                                        <th class="text-center">Nama</th>
-                                        <th class="text-center">TTL</th>
-                                        <th class="text-center">Alamat</th>
-                                        <th class="text-center">Telp</th>
-                                        <th class="text-center">Opsi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-								
-								<?php
-								while($row = mysql_fetch_array($exsql)){
-								?>	
-								
-                                    <tr>
-                                        <td class="text-center"><?php echo $row['nis']; ?></td>
-                                        <td class="text-center"><?php echo $row['nama_siswa']; ?></td>
-										<td class="text-center"><?php echo $row['tempat_lahir'] .','.$row['ttl']; ?></td>
-										<td class="text-center"><?php echo $row['alamat']; ?></td>
-										<td class="text-center"><?php echo $row['telp']; ?></td>
-                                        <td><a href="edit_master_siswa.php?id=<?php echo $row['id'];?>"><span class="label label-primary">Edit</span> <a/> &nbsp;
-										    <a href="pro_del_master_siswa.php?id=<?php echo $row['id'];?>" onclick="return confirm('Apakah anda yakin menghapus data ini?')"><span class="label label-primary">Delete</span></td>
-										    <a href="foto_siswa.php?id=<?php echo $row['id']; ?>"> <span class="label label-primary">Foto </span> </a>
-										   </td>
-										   </tr>
-										   <?php
-								}
-								?>
-                                </tbody>
-                            </table>
+                      
                         </div>
                     </div>
                     <!-- END Datatables Content -->

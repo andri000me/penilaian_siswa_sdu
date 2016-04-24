@@ -22,7 +22,11 @@ if($availsql > 0){
 	//jika login berhasil maka akan dialihkan ke halaman dashboard
 	header('location:dashboard.php');
 	session_start();
+<<<<<<< HEAD
 	$_SESSION['username'] =$datasql ['username']; 
+=======
+	$_SESSION['username'] = $datasql['username'];
+>>>>>>> 1f6715170e09f2753356c50dc37df1bec9865cd0
 	
 }else{
 	//jika gagal balik lagi ke halaman login
